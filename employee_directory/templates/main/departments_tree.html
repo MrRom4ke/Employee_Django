@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load mptt_tags %}
+{% load static %}
+
+{% block title %}Структура компании{% endblock %}
+
+{% block content %}
+<script>
+	 'use strict';
+
+var togglers = document.getElementsByClassName("caret");
+var i;
+
+for (i = 0; i < togglers.length; i++) {
+    togglers[i].addEventListener("click", function () {
+        this.parentElement.querySelector(".nested").classList.toggle("active");
+        this.classList.toggle("caret-down");
+    });
+}
+</script>
+
+<h3>Структура компании</h3>
+<ul id="myUL">
+	{% recursetree object_list %}
+	<li>
+		{% if node.is_leaf_node %}
+		<span class="leaf"><a href="{{node.get_absolute_url}}">{{ node.name }}</a></span>
+		{% else %}
+		<span class="caret parent"><a href="{{node.get_absolute_url}}">{{ node.name }}</a></span>
+		<ul class="nested">
+			{{ children }}
+		</ul>
+		{% endif %}
+	</li>
+	{% endrecursetree %}
+</ul>
+{% endblock %}

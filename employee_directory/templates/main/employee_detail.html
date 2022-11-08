@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}{{ object.name }}{% endblock %}
+{% block content %}
+
+<main>
+	<section>
+		<div class="container">
+			<h2></h2>
+		</div>
+	</section>
+	<div>
+		<h2>{{ object.name }}</h2>
+		<p>Должность: {{ object.position }}</p>
+		<p>Дата приёма: {{ object.emp_date }}</p>
+		<p>Оклад: {{ object.salary }}</p>
+	</div>
+</main>
+{% endblock %}
