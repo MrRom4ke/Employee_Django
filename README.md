@@ -46,7 +46,7 @@ virtualenv venv -p python3
 ```
 Install the development requirements:
 ```
-pip install -r requirements/local.txt
+pip install -r requirements.txt
 ```
 Populate the database with test values, it takes about 9 minutes:
 ```
