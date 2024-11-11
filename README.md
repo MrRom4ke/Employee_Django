@@ -1,5 +1,5 @@
 # Employee directory (django)
-Web-application which displays a tree structure of departments with a list of employees
+Test Task. Web-application which displays a tree structure of departments with a list of employees
 
 ## About
 
